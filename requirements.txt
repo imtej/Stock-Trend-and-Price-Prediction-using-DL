@@ -7,8 +7,5 @@ keras
 streamlit
 scikit-learn
 tensorflow
-
-os
 requests
-zipfile
-io
+
