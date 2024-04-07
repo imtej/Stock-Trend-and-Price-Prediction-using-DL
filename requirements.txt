@@ -5,4 +5,5 @@ plotly
 yfinance
 keras
 streamlit
-sklearn
+scikit-learn
+
