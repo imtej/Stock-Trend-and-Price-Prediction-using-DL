@@ -8,6 +8,40 @@ from keras.models import load_model
 import streamlit as st
 from sklearn.metrics import r2_score
 
+
+# # Load my model
+
+import os
+import requests
+import zipfile
+import io
+
+def clone_github_repository(github_repo_url, destination_directory):
+    repository_name = github_repo_url.split('/')[-1]
+    os.makedirs(destination_directory, exist_ok=True)
+    zip_url = f'{github_repo_url}/archive/main.zip'
+    response = requests.get(zip_url)
+    if response.status_code == 200:
+        with zipfile.ZipFile(io.BytesIO(response.content), 'r') as zip_ref:
+            zip_ref.extractall(destination_directory)
+        print(f'Repository cloned to {destination_directory}/{repository_name}')
+    else:
+        print(f'Failed to download the repository. Status code: {response.status_code}')
+
+git_url = 'https://github.com/imtej/Stock-Trend-and-Price-Prediction-using-DL'
+dest_dir = "files"
+clone_github_repository(git_url, dest_dir)
+
+
+# # Load my model
+
+model = load_model('./files/Stock-Trend-and-Price-Prediction-using-DL-main/keras_model.h5')
+
+
+
+
+
+
 # Get the start and end dates 
 start = '2010-01-01'
 end = '2019-12-31'
@@ -114,34 +148,6 @@ data_training_array = scaler.fit_transform(data_training)
 # x_train, y_train = np.array(x_train), np.array(y_train)   
 
 
-
-# # Load my model
-
-import os
-import requests
-import zipfile
-import io
-
-def clone_github_repository(github_repo_url, destination_directory):
-    repository_name = github_repo_url.split('/')[-1]
-    os.makedirs(destination_directory, exist_ok=True)
-    zip_url = f'{github_repo_url}/archive/main.zip'
-    response = requests.get(zip_url)
-    if response.status_code == 200:
-        with zipfile.ZipFile(io.BytesIO(response.content), 'r') as zip_ref:
-            zip_ref.extractall(destination_directory)
-        print(f'Repository cloned to {destination_directory}/{repository_name}')
-    else:
-        print(f'Failed to download the repository. Status code: {response.status_code}')
-
-git_url = 'https://github.com/imtej/Stock-Trend-and-Price-Prediction-using-DL'
-dest_dir = "files"
-clone_github_repository(git_url, dest_dir)
-
-
-# # Load my model
-
-model = load_model('./files/Stock-Trend-and-Price-Prediction-using-DL-main/keras_model.h5')
 
 
 
