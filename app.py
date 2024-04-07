@@ -116,16 +116,40 @@ data_training_array = scaler.fit_transform(data_training)
 
 
 # # Load my model
-# model = load_model('keras_model.h5')
 
 import os
+import requests
+import zipfile
+import io
 
-# Get the directory of the current script
-current_dir = os.path.dirname(os.path.abspath(__file__))
+def clone_github_repository(github_repo_url, destination_directory):
+    repository_name = github_repo_url.split('/')[-1]
+    os.makedirs(destination_directory, exist_ok=True)
+    zip_url = f'{github_repo_url}/archive/main.zip'
+    response = requests.get(zip_url)
+    if response.status_code == 200:
+        with zipfile.ZipFile(io.BytesIO(response.content), 'r') as zip_ref:
+            zip_ref.extractall(destination_directory)
+        print(f'Repository cloned to {destination_directory}/{repository_name}')
+    else:
+        print(f'Failed to download the repository. Status code: {response.status_code}')
 
-# Load my model
-model_path = os.path.join(current_dir, 'keras_model.h5')
-model = load_model(model_path)
+git_url = 'https://github.com/imtej/Stock-Trend-and-Price-Prediction-using-DL'
+dest_dir = "files"
+clone_github_repository(git_url, dest_dir)
+
+
+# import os
+
+# # Get the directory of the current script
+# current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# # Load my model
+# model_path = os.path.join(current_dir, 'keras_model.h5')
+# model = load_model(model_path)
+
+
+model = load_model('./files/Stock-Trend-and-Price-Prediction-using-DL-main/keras_model.h5')
 
 
 
@@ -180,4 +204,7 @@ r2 = r2_score(y_test, y_predicted)
 # Display R2 score
 st.subheader('Model Evaluation(R2 Score)')
 st.write(f'R2 Score: {r2}')
+
+
+
 
