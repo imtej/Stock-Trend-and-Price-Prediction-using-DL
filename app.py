@@ -139,15 +139,7 @@ dest_dir = "files"
 clone_github_repository(git_url, dest_dir)
 
 
-# import os
-
-# # Get the directory of the current script
-# current_dir = os.path.dirname(os.path.abspath(__file__))
-
 # # Load my model
-# model_path = os.path.join(current_dir, 'keras_model.h5')
-# model = load_model(model_path)
-
 
 model = load_model('./files/Stock-Trend-and-Price-Prediction-using-DL-main/keras_model.h5')
 
