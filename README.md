@@ -1,1 +1,1 @@
-## Stock Trend and Price Prediction using DL
+## Stock Trend and Price Prediction using DL 
