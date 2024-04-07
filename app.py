@@ -35,7 +35,7 @@ clone_github_repository(git_url, dest_dir)
 
 # # Load my model
 
-model = load_model('./files/Stock-Trend-and-Price-Prediction-using-DL-main/keras_model.h5')
+model = load_model("./files/Stock-Trend-and-Price-Prediction-using-DL-main/keras_model.h5")
 
 
 
