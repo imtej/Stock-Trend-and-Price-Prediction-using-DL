@@ -114,8 +114,21 @@ data_training_array = scaler.fit_transform(data_training)
 # x_train, y_train = np.array(x_train), np.array(y_train)   
 
 
+
+# # Load my model
+# model = load_model('keras_model.h5')
+
+import os
+
+# Get the directory of the current script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
 # Load my model
-model = load_model('keras_model.h5')
+model_path = os.path.join(current_dir, 'keras_model.h5')
+model = load_model(model_path)
+
+
+
 
 # Testing part
 past_100_days = data_training.tail(100)
