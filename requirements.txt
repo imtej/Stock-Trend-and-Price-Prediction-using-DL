@@ -6,4 +6,4 @@ yfinance
 keras
 streamlit
 scikit-learn
-
+tensorflow
