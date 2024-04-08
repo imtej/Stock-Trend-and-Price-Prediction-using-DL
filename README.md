@@ -60,7 +60,7 @@ Streamlit link : [https://stockpredlstm.streamlit.app/]
 
 # Screenshots of UI
 
-Feeding Stock Ticker Name and choosing the Time Frame:
+Feeding the Stock Ticker Name and choosing the Time Frame:
 
 ![HomepageUI](./Screenshots/Stock_Pred_LSTM_Home1.png)
 
@@ -69,7 +69,7 @@ Chart:
 ![HomepageUI](./Screenshots/Stock_Pred_LSTM_Chart2.png)
 
 
-### Predcted closing price vs Original closing price:
+### Predicted closing price vs Original closing price:
 
 ![Prediction](./Screenshots/Stock_Pred_LSTM_Predicted_Chart.png)
 
