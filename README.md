@@ -21,7 +21,7 @@ This data set from the `yfinance` consists of the following columns.
 * `Volume` : 
 
 Target variable:
-Our target is to predict the `Closing Price` of the stock and also predict the trend of the stock.
+Our target is to predict the `Closing Price` of the stock and also to predict the trend of the stock.
 
 
 # Approach for the project 
