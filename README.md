@@ -2,6 +2,7 @@
 
 
 
+
 ## Prediction of the stocks trend and closing price
 
 ### Introduction About the Data :
