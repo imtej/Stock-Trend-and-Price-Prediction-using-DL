@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 import yfinance as yf
+import h5py
 from keras.models import load_model
 import streamlit as st
 from sklearn.metrics import r2_score
